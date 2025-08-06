@@ -51,7 +51,7 @@ const Register = () => {
       setUsername("")
       setEmail("")
       setPassword("")
-      navigate("/")  // opcional: redirige al inicio
+      navigate("/") 
     } else {
       setError("Error al registrar: " + result.error)
     }

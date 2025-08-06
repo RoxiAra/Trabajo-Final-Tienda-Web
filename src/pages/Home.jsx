@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
+import { SearchBar } from "../components/SearchBar"
 
 const Home = () => {
   const [products, setProducts] = useState([])
@@ -111,7 +112,8 @@ const Home = () => {
       <section>
         <h2>Nuestros productos</h2>
         <p>Elegí entre nuestras categorías más populares.</p>
-
+        
+        <SearchBar products= {products} />
 
         {
           showPopup && <section className="popup-edit">
