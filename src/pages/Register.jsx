@@ -1,5 +1,7 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Layout } from "../components/Layout"
+import { useAuth } from "../context/UserContext"
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -8,70 +10,87 @@ const Register = () => {
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
 
-  const handleSubmit = (e) => {
+  const { register } = useAuth()
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError("")
     setSuccess("")
 
     if (!username || !email || !password) {
-      setError("Debes completar todos los campos")
+      setError("Todos los campos son obligatorios")
       return
     }
 
     const newUser = {
-      username,
       email,
-      password
+      username,
+      password,
+      name: {
+        firstname: "Nombre",
+        lastname: "Apellido"
+      },
+      address: {
+        city: "Ciudad",
+        street: "Calle",
+        number: 123,
+        zipcode: "00000",
+        geolocation: {
+          lat: "0.0000",
+          long: "0.0000"
+        }
+      },
+      phone: "0000000000"
     }
 
-    console.log(newUser)
-    setSuccess("Usuario registrado con éxito")
+    const result = await register(newUser)
 
-    setUsername("")
-    setEmail("")
-    setPassword("")
+    if (result.success) {
+      setSuccess("Usuario registrado con éxito")
+      setUsername("")
+      setEmail("")
+      setPassword("")
+      navigate("/")  // opcional: redirige al inicio
+    } else {
+      setError("Error al registrar: " + result.error)
+    }
   }
 
   return (
     <Layout>
       <h1>Registrate</h1>
-
       <section>
-        <h2>Hola, bienvenido</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Username:</label>
             <input
               type="text"
-              onChange={(e) => setUsername(e.target.value)}
               value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div>
-            <label>Correo electrónico:</label>
+            <label>Email:</label>
             <input
               type="email"
-              onChange={(e) => setEmail(e.target.value)}
               value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>
             <label>Contraseña:</label>
             <input
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
               value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button>Ingresar</button>
+          <button type="submit">Registrar</button>
         </form>
 
-        {
-          error && <p style={{ color: "red" }}>{error}</p>
-        }
-        {
-          success && <p style={{ color: "green" }}>{success}</p>
-        }
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {success && <p style={{ color: "green" }}>{success}</p>}
       </section>
     </Layout>
   )
