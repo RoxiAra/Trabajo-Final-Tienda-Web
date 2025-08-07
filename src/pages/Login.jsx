@@ -8,19 +8,31 @@ const Login = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const { login } = useAuth()
+  const [error, setError] = useState("")
+  const [succes, setSucces] = useState("")
 
-  const nagivate = useNavigate()
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault()
     console.log({ username, password })
+
+    if (!username || !password) {
+      setError("Todos los campos son obligatorios")
+      return
+    }
+
     const isLogin = await login(username, password)
 
     if (isLogin) {
-      setUsername("")
+        setUsername("")
       setPassword("")
-      nagivate("/")
-    }
+      setError("")
+      setSucces(`Bienvenido ${username}`)
+      navigate("/")
+    } else {
+      setError("Usuario o Contraseña incorrecto")
+      }
   }
 
   return (
@@ -47,6 +59,8 @@ const Login = () => {
           </div>
           <button>Ingresar</button>
         </form>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {succes && <p style={{ color: "green" }}>{succes}</p>}
       </section>
     </Layout>
   )
