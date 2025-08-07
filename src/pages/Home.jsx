@@ -12,6 +12,7 @@ const Home = () => {
   const [descriptionEdit, setDescriptionEdit] = useState("")
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
+  const [search, setSearch] = useState("")
 
   // simulando existencia del usuario, proximamente este estado será global
   const { user } = useAuth()
@@ -20,12 +21,33 @@ const Home = () => {
     const response = await fetch("https://fakestoreapi.com/products", { method: "GET" })
     const data = await response.json()
     setProducts(data)
+
+    const traducir = data.map(products => {
+      if (products.category=== "jewelery") {
+        return { ...products, category: "joyería" }
+      } else if (products.category === "men's clothing") {
+        return {...products, category: "ropa de hombre" }
+      } else if (products.category === "women's clothing") {
+        return { ...products, category: "ropa de mujer" }
+      } else if (products.category === "electronics") {
+        return { ...products, category: "electronica" }
+      }
+      return products
+    })
+    
+    setProducts(traducir)
   }
 
   // El array vacío (dependencias) espera a que ejecute el return del jsx. Si tiene algo, useEffect se va a ejecutar cada vez que se modifique lo que este dentro de la dependencia.
   useEffect(() => {
     fetchingProducts()
   }, [])
+
+  const searchBar = search.toLocaleLowerCase()
+  const filterProducts = products.filter((products) => 
+    products.title.toLocaleLowerCase().includes(searchBar) || 
+    products.description.toLocaleLowerCase().includes(searchBar) ||
+    products.category.toLocaleLowerCase().includes(searchBar))
 
   const handleDelete = async (id) => {
     const response = await fetch(`https://fakestoreapi.com/products/${id}`, { method: "DELETE" })
@@ -112,8 +134,8 @@ const Home = () => {
       <section>
         <h2>Nuestros productos</h2>
         <p>Elegí entre nuestras categorías más populares.</p>
-        
-        <SearchBar products= {products} />
+
+        <SearchBar search={search} setSearch={setSearch} />
 
         {
           showPopup && <section className="popup-edit">
@@ -156,7 +178,7 @@ const Home = () => {
 
         <div>
           {
-            products.map((product) => <div key={product.id}>
+            filterProducts.map((product) => <div key={product.id}>
               <h2 key={product.id}>{product.title}</h2>
               <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
               <p>${product.price}</p>
