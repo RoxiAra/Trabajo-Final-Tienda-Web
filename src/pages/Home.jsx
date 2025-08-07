@@ -82,7 +82,7 @@ const Home = () => {
     }
 
     try {
-      const response = await fetch(`https://fakestoreapi.com/products/${productToEdit.id}`, {
+      const response = await fetch( `https://fakestoreapi.com/products/${productToEdit.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -109,26 +109,22 @@ const Home = () => {
   return (
     <Layout>
       <section>
-        <h1>Bienvenido a Nuestra Tienda</h1>
-        <p>Descubrí una selección exclusiva de productos para vos. Calidad, confianza y atención personalizada.</p>
+        <h2>Bienvenido a Nova Market</h2>
+<p>Descubrí nuestra exclusiva selección de productos de joyería, moda y tecnología. Calidad garantizada y atención personalizada.</p>
       </section>
 
       <section>
         <h2>¿Por qué elegirnos?</h2>
-        <ul>
-          <li>
-            <h3>Envíos a todo el país</h3>
-            <p>Recibí tu compra en la puerta de tu casa estés donde estés.</p>
-          </li>
-          <li>
-            <h3>Pagos seguros</h3>
-            <p>Trabajamos con plataformas que garantizan tu seguridad.</p>
-          </li>
-          <li>
-            <h3>Atención personalizada</h3>
-            <p>Estamos disponibles para ayudarte en todo momento.</p>
-          </li>
-        </ul>
+<ul>
+  <li>✔ Envíos a todo el país</li>
+  <li>✔ Compras 100% seguras</li>
+  <li>✔ Productos originales y de calidad</li>
+  <li>✔ Soporte personalizado</li>
+</ul>
+      </section>
+      <section>
+        <h1>Sobre Nova Market</h1>
+<p>Somos una tienda virtual creada por emprendedores que buscan ofrecer productos de calidad con un enfoque moderno y práctico. Nuestra misión es brindar una experiencia de compra segura, simple y satisfactoria, combinando tecnología, moda y estilo en un solo lugar.</p>
       </section>
 
       <section>
@@ -180,7 +176,7 @@ const Home = () => {
           {
             filterProducts.map((product) => <div key={product.id}>
               <h2 key={product.id}>{product.title}</h2>
-              <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
+              <img width="80px" src={product.image} alt={`Imagen de ${products.title}`} />
               <p>${product.price}</p>
               <p>{product.description}</p>
               <p><strong>{product.category}</strong></p>
@@ -198,4 +194,7 @@ const Home = () => {
   )
 }
 
-export { Home }
+export { Home }      
+
+
+
