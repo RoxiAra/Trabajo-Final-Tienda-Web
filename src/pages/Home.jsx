@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 import { SearchBar } from "../components/SearchBar"
+import imagendebanner from "../assets/imagendebanner.png"
 
 const Home = () => {
   const [products, setProducts] = useState([])
@@ -109,22 +110,7 @@ const Home = () => {
   return (
     <Layout>
       <section>
-        <h2>Bienvenido a Nova Market</h2>
-<p>Descubrí nuestra exclusiva selección de productos de joyería, moda y tecnología. Calidad garantizada y atención personalizada.</p>
-      </section>
-
-      <section>
-        <h2>¿Por qué elegirnos?</h2>
-<ul>
-  <li>✔ Envíos a todo el país</li>
-  <li>✔ Compras 100% seguras</li>
-  <li>✔ Productos originales y de calidad</li>
-  <li>✔ Soporte personalizado</li>
-</ul>
-      </section>
-      <section>
-        <h1>Sobre Nova Market</h1>
-<p>Somos una tienda virtual creada por emprendedores que buscan ofrecer productos de calidad con un enfoque moderno y práctico. Nuestra misión es brindar una experiencia de compra segura, simple y satisfactoria, combinando tecnología, moda y estilo en un solo lugar.</p>
+        <img src={imagendebanner} alt="Banner" />
       </section>
 
       <section>
@@ -172,7 +158,7 @@ const Home = () => {
           </section>
         }
 
-        <div>
+        <div className="product-grid">
           {
             filterProducts.map((product) => <div key={product.id}>
               <h2 key={product.id}>{product.title}</h2>
@@ -190,6 +176,22 @@ const Home = () => {
           }
         </div>
       </section>
+
+      <section>
+        <h2>¿Por qué elegirnos?</h2>
+<ul>
+  <li>✔ Envíos a todo el país</li>
+  <li>✔ Compras 100% seguras</li>
+  <li>✔ Productos originales y de calidad</li>
+  <li>✔ Soporte personalizado</li>
+</ul>
+      </section>
+      <section>
+        <h1>Sobre Nova Market</h1>
+<p>Somos una tienda virtual creada por emprendedores que buscan ofrecer productos de calidad con un enfoque moderno y práctico. Nuestra misión es brindar una experiencia de compra segura, simple y satisfactoria, combinando tecnología, moda y estilo en un solo lugar.</p>
+      </section>
+
+
     </Layout>
   )
 }

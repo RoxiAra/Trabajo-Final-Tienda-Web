@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useAuth } from "../context/UserContext"
+import "../styles/components/Header.css"
 
 const Header = () => {
   const { user, logout } = useAuth()
@@ -9,8 +10,8 @@ const Header = () => {
   }
 
   return (
-    <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <header className="header">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top" id="nav-menu" >
         <div className="container-fluid">
           <Link className="navbar-brand" to="#">Nova Market</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
