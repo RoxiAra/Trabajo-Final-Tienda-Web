@@ -3,6 +3,10 @@ import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 import { SearchBar } from "../components/SearchBar"
 import imagendebanner from "../assets/imagendebanner.png"
+import "../styles/pages/home.css"
+import enviosatodoelpais from "../assets/enviosatodoelpais.png"
+import producto from "../assets/producto.png"
+import PERSONALIZADO from "../assets/PERSONALIZADO.png"
 
 const Home = () => {
   const [products, setProducts] = useState([])
@@ -109,20 +113,20 @@ const Home = () => {
 
   return (
     <Layout>
-      <section>
-        <img src={imagendebanner} alt="Banner" />
+      <section className="img-fluid" >
+        <img src={imagendebanner} alt="Banner" className="banner-class" />
       </section>
 
-      <section>
-        <h2>Nuestros productos</h2>
-        <p>Elegí entre nuestras categorías más populares.</p>
+      <section className="seccion-productos">
+        <h2 className="home-h2">Nuestros productos</h2>
+        <p className="home-p">Elegí entre nuestras categorías más populares.</p>
 
-        <SearchBar search={search} setSearch={setSearch} />
-
+        <div className="product-search">
+          <SearchBar search={search} setSearch={setSearch} />
+        </div>
         {
-          showPopup && <section className="popup-edit">
+          showPopup && <section className="product-edit">
             <h2>Editando producto.</h2>
-            <button onClick={() => setShowPopup(null)}>Cerrar</button>
             <form onSubmit={handleUpdate}>
               <input
                 type="text"
@@ -153,50 +157,48 @@ const Home = () => {
                 value={imageEdit}
                 onChange={(e) => setImageEdit(e.target.value)}
               />
-              <button>Actualizar</button>
+              <button className="btm-cerrar" onClick={() => setShowPopup(null)}>Cerrar</button>
+              <button className="btm-actualizar">Actualizar</button>
             </form>
           </section>
         }
-
-        <div className="product-grid">
+        <div className="card">
           {
-            filterProducts.map((product) => <div key={product.id}>
-              <h2 key={product.id}>{product.title}</h2>
-              <img width="80px" src={product.image} alt={`Imagen de ${products.title}`} />
-              <p>${product.price}</p>
-              <p>{product.description}</p>
-              <p><strong>{product.category}</strong></p>
-              {
-                user && <div>
-                  <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-                  <button onClick={() => handleDelete(product.id)}>Borrar</button>
-                </div>
-              }
+            filterProducts.map((product) => <div key={product.id} className="car-conten" >
+              <img className="card-img-top" src={product.image} alt={`Imagen de ${products.title}`} />
+              <div className="card-body">
+                <h2 className="card-title" key={product.id}>{product.title}</h2>
+                <p className="card-price">${product.price}</p>
+                <p className="card-text"> {product.description.length > 100 
+                  ? product.description.slice(0, 100) + "..." 
+                  : product.description}
+                </p>
+                <p><strong>{product.category}</strong></p>
+                {
+                  user && <div>
+                  <button className="btn btn-primary" onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                  <button className="btn btn-primary" onClick={() => handleDelete(product.id)}>Borrar</button>
+                  </div>
+                }
+              </div>
             </div>)
           }
         </div>
       </section>
 
-      <section>
+      <section className="seccion-porque">
         <h2>¿Por qué elegirnos?</h2>
-<ul>
-  <li>✔ Envíos a todo el país</li>
-  <li>✔ Compras 100% seguras</li>
-  <li>✔ Productos originales y de calidad</li>
-  <li>✔ Soporte personalizado</li>
-</ul>
-      </section>
-      <section>
-        <h1>Sobre Nova Market</h1>
-<p>Somos una tienda virtual creada por emprendedores que buscan ofrecer productos de calidad con un enfoque moderno y práctico. Nuestra misión es brindar una experiencia de compra segura, simple y satisfactoria, combinando tecnología, moda y estilo en un solo lugar.</p>
-      </section>
-
-
+        <ul className="porque-img">
+  <li><img src={enviosatodoelpais} alt="Envios a todo el pais" /></li>
+  <li><img src={producto} alt="" /></li>
+  <li><img src={PERSONALIZADO} alt="" /></li>
+        </ul>
+        </section>
     </Layout>
   )
 }
 
-export { Home }      
+export { Home }         
 
 
 

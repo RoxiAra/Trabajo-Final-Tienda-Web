@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useAuth } from "../context/UserContext"
-import "../styles/components/Header.css"
+
 
 const Header = () => {
   const { user, logout } = useAuth()

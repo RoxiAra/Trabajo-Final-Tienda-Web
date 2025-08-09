@@ -1,18 +1,268 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-footer {
-  background-color: #0A3D62;
-  min-height: 200%;
+/* Tipografías */
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 60px;
-  justify-items: center;
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
 }
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Variables */
+:root {
+  --tipografia: "Poppins", serif;
+  --colorPrincipal: #0A3D62;
+  --colorTerciario: #F2F2F2;
+  --colorDetalles: #D4AF37;
+  --colorContraste: #6C3483;
+  --margin: 20px;
+  --tamaño: 250px;
+}
+
+/* --- Banner --- */
+.banner-class {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* --- Seccion productos --- */
+.seccion-productos {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-h2 {
+  font-size: 3rem;
+  font-family: var(--tipografia);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.home-p {
+  font-family: var(--tipografia);
+  font-size: 1.5rem;
+  color: var(--colorPrincipal);
+}
+
+/* --- Barra de búsqueda --- */
+.product-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.product-search input[type="text"] {
+  width: 500px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 2px solid var(--colorTerciario);
+  outline: none;
+  min-width: 250px;
+}
+
+.product-search input[type="text"]:hover {
+  background-color: var(--colorDetalles);
+}
+
+/* --- Tarjetas de productos --- */
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.car-conten {
+  background: var(--colorTerciario);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.car-conten:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.card-title {
+  font-size:  1.1rem;
+  font-family: var(--tipografia);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  font-family: var(--tipografias);
+}
+
+.card-price {
+  color: var(--colorDetalles);
+  font-weight: bold;
+}
+
+/* --- Botones --- */
+.btn {
+  padding: 6px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--colorDetalles);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #d4ae00;
+}
+
+/* --- Seccion "Por qué elegirnos" --- */
+.seccion-porque {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 40px;
+  font-family: var(--tipografias);
+  text-align: center;
+}
+
+.seccion-porque h2 {
+  font-size: 3rem;
+  font-family: var(--tipografia);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.seccion-porque img {
+  width: var(--tamaño);
+  margin: var(--margin);
+}
+
+.porque-img {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  list-style-type: none;
+}
+
+/* --- Seccion "Sobre Nova" --- */
+.seccion-sobre-nova {
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+  font-family: var(--tipografias);
+}
+
+/*-- Seccion "Producto Editado" --- */
+
+.product-edit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--colorTerciario);
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(3, 6, 209, 0.2);
+  width: 400px;
+  max-width: 90%;
+  z-index: 9999;
+  font-family: var(--tipografia);
+}
+
+.product-edit h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--colorPrincipal);
+  text-align: center;
+}
+
+.btm-cerrar {
+  background: var(--colorContraste);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.btm-cerrar:hover {
+  background: #c53973;
+}
+
+.product-edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.product-edit input,
+.product-edit textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.product-edit input:focus,
+.product-edit textarea:focus {
+  border-color: #4a90e2;
+}
+
+.product-edit textarea {
+  resize: none;
+  height: 80px;
+}
+
+.btm-actualizar {
+  background: var(--colorPrincipal);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.btm-actualizar:hover{
+  background-color: #4a90e2;
+}
+
