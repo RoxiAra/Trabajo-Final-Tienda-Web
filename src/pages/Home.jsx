@@ -189,9 +189,9 @@ const Home = () => {
       <section className="seccion-porque">
         <h2>¿Por qué elegirnos?</h2>
         <ul className="porque-img">
-  <li><img src={enviosatodoelpais} alt="Envios a todo el pais" /></li>
-  <li><img src={producto} alt="" /></li>
-  <li><img src={PERSONALIZADO} alt="" /></li>
+        <li><img src={enviosatodoelpais} alt="Envios a todo el pais" /></li>
+        <li><img src={producto} alt="" /></li>
+        <li><img src={PERSONALIZADO} alt="" /></li>
         </ul>
         </section>
     </Layout>
