@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
+import "../styles/pages/register.css"
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -59,10 +60,11 @@ const Register = () => {
 
   return (
     <Layout>
-      <h1>Registrate</h1>
-      <section>
-        <form onSubmit={handleSubmit}>
-          <div>
+      <section className="seccion-register">
+        <h1>Regístrate</h1>
+      <section className="seccion-form">
+        <form onSubmit={handleSubmit} className="form-register">
+          <div className="form-username">
             <label>Username:</label>
             <input
               type="text"
@@ -70,7 +72,7 @@ const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div>
+          <div className="form-email">
             <label>Email:</label>
             <input
               type="email"
@@ -78,7 +80,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div>
+          <div className="form-contraseña">
             <label>Contraseña:</label>
             <input
               type="password"
@@ -86,11 +88,15 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit">Registrar</button>
-        </form>
-
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {success && <p style={{ color: "green" }}>{success}</p>}
+          <button type="submit">Regístrar</button>
+          </form>
+          <div className="div-error">
+            {error && <p>{error}</p>}
+          </div>
+          <div className="div-succes">
+            {success && <p>{success}</p>}
+          </div>
+      </section>
       </section>
     </Layout>
   )

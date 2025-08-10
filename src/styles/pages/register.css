@@ -34,10 +34,8 @@
   --tamaño: 250px;
 }
 
-/*-- Login --*/
-
-/*-- Contenedor principal --*/
-.seccion-entera {
+/*-- Registro --*/
+.seccion-register {
   display: flex;
   flex-direction: column; 
   align-items: center;    
@@ -48,77 +46,75 @@
   font-family: var(--tipografia);
 }
 
-.seccion-entera h1,
-.seccion-entera h2,
-.seccion-entera p{
+.seccion-register h1 {
   color: var(--colorPrincipal);
-}
-
-/*-- Inicio de Seccion --*/
-.login-inicio h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
-}
-
-/*-- Usuario de Prueba --*/
-.seccion-usuario-prueba {
-  background: #fff;
-  border: 1px solid var(--colorContraste);
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 350px;
 }
 
 /*-- Formulario --*/
-.seccion-formulario {
+.form-register {
   background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid var(--colorContraste);
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid var(--colorContraste);
+  box-shadow: 0px 3px 10px rgba( 0,0,0,0.05);
   width: 100%;
   max-width: 350px;
 }
 
-.seccion-formulario div {
+.form-register div {
   margin-bottom: 15px;
 }
 
-.seccion-formulario label {
+.form-register label {
   display: block;
-  margin-bottom: 5px;
   font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--colorPrincipal);
 }
 
-.seccion-formulario input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid var(--colorContraste);
-}
-
-/* Botón */
-.seccion-formulario button {
+.form-register input {
   width: 100%;
   padding: 10px;
-  background: var(--colorDetalles);
-  color: #fff;
+  border: 1.5px solid var(--colorContraste);
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-register input:focus {
+  border-color: var(--colorDetalles);
+}
+
+/*-- Botón --*/
+.form-register button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--colorDetalles);
+  color: var(--colorTerciario);
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.seccion-formulario button:hover {
-  background: var(--colorPrincipal);
+.form-register button:hover {
+  background-color: var(--colorPrincipal);
 }
 
-/* Mensaje error o succes */
+/* Mensajes */
 .div-error p {
   color: rgb(248, 21, 21);
+  font-weight: bold;
+  text-align: center;
 }
 
 .div-succes p {
-  color: rgb(15, 236, 15);
+  color: rgb(15, 235, 15);
+  font-weight: bold;
+  text-align: center;
 }
