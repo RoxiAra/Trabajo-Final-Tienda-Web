@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <section className="footer-section">
+      <section className="footer-seccion">
         <h2>Contacto</h2>
 <ul>
           <li>Email: contacto@novamarket.com</li>
@@ -21,7 +21,7 @@ const Footer = () => {
   <li>Instagram: nov@market</li>
 </ul>
       </section>
-      <section className="footer-section3">
+      <section className="footer-seccion3">
         <h2>Enlaces Utiles</h2>
         <div className="footer-link">
           {user && (
@@ -39,7 +39,7 @@ const Footer = () => {
               )}
         </div>
       </section>
-      <section className="footer-section2">
+      <section className="footer-seccion2">
         <p>Sitio desarrollado por <a href="https://www.linkedin.com/in/roc%C3%ADo-mikaela-aramayo-706652324/" target="_blank">Rocio Aramayo</a></p>
         <p>© 2025 Nova Market.Todos los derechos reservados.</p>
       </section>

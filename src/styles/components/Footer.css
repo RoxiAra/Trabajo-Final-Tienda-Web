@@ -68,12 +68,12 @@ section li {
 
 /*-- Seccion Desarrollo --*/
 
-.footer-section2 a {
+.footer-seccion2 a {
   margin-bottom: 8px;
   color: var(--colorDetalles);
   text-decoration: none;
 }
 
-.footer-section2 a:hover {
+.footer-seccion2 a:hover {
   text-decoration: underline;
 }

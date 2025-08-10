@@ -52,6 +52,7 @@
   font-family: var(--tipografia);
   font-weight: bold;
   margin-bottom: 10px;
+  color: var(--colorPrincipal);
 }
 
 .home-p {
@@ -123,6 +124,7 @@
 .card-text {
   font-size: 0.9rem;
   font-family: var(--tipografias);
+  color: var(--colorPrincipal);
 }
 
 .card-price {
@@ -163,6 +165,7 @@
   font-family: var(--tipografia);
   font-weight: bold;
   margin-bottom: 10px;
+  color: var(--colorPrincipal);
 }
 
 .seccion-porque img {

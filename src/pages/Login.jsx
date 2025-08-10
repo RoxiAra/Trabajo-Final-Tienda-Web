@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 import { useNavigate } from "react-router-dom"
+import "../styles/pages/login.css"
 
 const Login = () => {
   const [username, setUsername] = useState("")
@@ -37,12 +38,17 @@ const Login = () => {
 
   return (
     <Layout>
-      <h1>Inicia sesión</h1>
-
-      <section>
-        <h2>Hola, bienvenido de nuevo</h2>
-        <p>johnd, m38rmF$</p>
-        <form onSubmit={handleLogin}>
+      <section className="seccion-entera">
+        <section className="login-inicio">
+          <h1>Inicia Sesión</h1>
+          </section>
+          <section className="seccion-usuario-prueba">
+            <h2>Usuario de Prueba</h2>
+          <p>Usuario: johnd</p>
+          <p>Contaseña: m38rmF$</p>
+          </section>
+          <section className="seccion-formulario">
+            <form onSubmit={handleLogin}>
           <div>
             <label>Nombre de usuario:</label>
             <input
@@ -59,8 +65,13 @@ const Login = () => {
           </div>
           <button>Ingresar</button>
         </form>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {succes && <p style={{ color: "green" }}>{succes}</p>}
+          </section>
+          <div className="div-error">
+            {error && <p>{error}</p>}
+          </div>
+          <div className="div-succes">
+            {succes && <p>{succes}</p>}
+          </div>
       </section>
     </Layout>
   )

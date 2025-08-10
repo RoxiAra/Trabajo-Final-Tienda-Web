@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografías */
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/*-- Variables --*/
+:root {
+  --tipografia: "Poppins", serif;
+  --colorPrincipal: #0A3D62;
+  --colorTerciario: #F2F2F2;
+  --colorDetalles: #D4AF37;
+  --colorContraste: #6C3483;
+  --margin: 20px;
+  --tamaño: 250px;
+}
+
+/*-- Login --*/
+
+/*-- Contenedor principal --*/
+.seccion-entera {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--colorTerciario);
+  padding: 20px;
+  font-family: var(--tipografia);
+}
+
+.seccion-entera h1,
+.seccion-entera h2,
+.seccion-entera p{
+  color: var(--colorPrincipal);
+}
+
+/*-- Inicio de Seccion --*/
+.login-inicio h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/*-- Usuario de Prueba --*/
+.seccion-usuario-prueba {
+  background: #fff;
+  border: 1px solid var(--colorContraste);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/*-- Formulario --*/
+.seccion-formulario {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--colorContraste);
+  width: 100%;
+  max-width: 350px;
+}
+
+.seccion-formulario div {
+  margin-bottom: 15px;
+}
+
+.seccion-formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.seccion-formulario input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--colorContraste);
+}
+
+/* Botón */
+.seccion-formulario button {
+  width: 100%;
+  padding: 10px;
+  background: var(--colorDetalles);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.seccion-formulario button:hover {
+  background: var(--colorPrincipal);
+}
+
+/* Mensaje error o succes */
+.div-error p {
+  color: red;
+}
+
+.div-succes p {
+  color: green;
+}
