@@ -34,21 +34,46 @@
   --tamaño: 250px;
 }
 
-/*-- Header --*/
+/*-- Footer --*/
 
-.container-fluid {
+footer {
   background-color: var(--colorPrincipal);
-  padding: 35px ;
-  margin-top: 15px;
-  margin-bottom: 15px;
   font-family: var(--tipografia);
+  display: flex;
+  justify-content: space-around;
 }
 
-.navbar-brand {
-  font-size: 3rem;
-  font-weight: bold;
+section {
+  padding: 25px;
 }
 
-.navbar-nav {
-  font-size: 2rem;
+section p, 
+section h2,
+section li {
+  color: var(--colorTerciario);
+}
+
+/*-- Seccion Links --*/
+.footer-link a {
+  display: flex;
+  justify-content: safe;
+  margin-bottom: 8px;
+  color: var(--colorDetalles);
+  text-decoration: none;
+}
+
+.footer-link a:hover {
+  text-decoration: underline; 
+}
+
+/*-- Seccion Desarrollo --*/
+
+.footer-section2 a {
+  margin-bottom: 8px;
+  color: var(--colorDetalles);
+  text-decoration: none;
+}
+
+.footer-section2 a:hover {
+  text-decoration: underline;
 }
