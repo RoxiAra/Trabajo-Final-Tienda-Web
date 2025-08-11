@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
-import "../styles/pages/register.css"
+import "../styles/pages/Register.css"
 
 const Register = () => {
   const [username, setUsername] = useState("")
