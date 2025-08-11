@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografías */
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Variables */
+:root {
+  --tipografia: "Poppins", serif;
+  --colorPrincipal: #0A3D62;
+  --colorTerciario: #F2F2F2;
+  --colorDetalles: #D4AF37;
+  --colorContraste: #6C3483;
+  --margin: 20px;
+  --tamaño: 250px;
+}
+
+/*-- About Us --*/
+.seccion-about {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--colorTerciario);
+  padding: 20px;
+  font-family: var(--tipografia);
+}
+
+.seccion-about h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--colorPrincipal);
+}
+
+.seccion-about h2 {
+  color: var(--colorPrincipal);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.seccion-about p{
+  color: var(--colorContraste);
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/*-- Grid --*/
+.seccion-about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+/*-- About Proyect --*/
+.seccion-about-proyec{
+  background: #F2F2F2;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.seccion-about-proyec:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--colorDetalles);
+}
+
+/*-- Dirigido --*/
+.seccion-about-dirigido {
+  background: #F2F2F2;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.seccion-about-dirigido:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--colorDetalles);
+}
+
+/*-- Tecnologias --*/
+.seccion-about-tecnologi {
+  background: #F2F2F2;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.seccion-about-tecnologi:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--colorDetalles);
+}
+
+.seccion-about-tecnologi li {
+  color: var(--colorContraste);
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
