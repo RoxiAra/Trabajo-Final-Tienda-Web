@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografías */
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Variables */
+:root {
+  --tipografia: "Poppins", serif;
+  --colorPrincipal: #0A3D62;
+  --colorTerciario: #F2F2F2;
+  --colorDetalles: #D4AF37;
+  --colorContraste: #6C3483;
+  --margin: 20px;
+  --tamaño: 250px;
+}
+
+/*-- Not Found --*/
+.seccion-not {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--colorTerciario);
+  padding: 20px;
+  font-family: var(--tipografia);
+}
+
+.seccion-not h1 {
+  color: var(--colorPrincipal);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.seccion-not p {
+  color: rgb(5, 5, 5);
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.link-not a {
+  color: var(--colorDetalles);
+  font-family: var(--tipografia);
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.link-not a:hover {
+  text-decoration: underline;
+  color: var(--colorPrincipal);
+}
