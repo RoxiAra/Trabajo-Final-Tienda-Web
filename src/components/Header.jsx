@@ -24,6 +24,7 @@ const Header = () => {
                 <>
                   <Link className="nav-link active" to="/">Home</Link>
                   <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                  <Link className="nav-link" to="/aboutus">About us</Link>
                   <button onClick={handleLogout} className="btn btn-link nav-link">Cerrar sesión</button>
                 </>
               )}
@@ -31,6 +32,7 @@ const Header = () => {
                 <>
                   <Link className="nav-link" to="/login">Login</Link>
                   <Link className="nav-link" to="/register">Registrate</Link>
+                  <Link className="nav-link" to="/aboutus">About us</Link>
                 </>
               )}
             </div>

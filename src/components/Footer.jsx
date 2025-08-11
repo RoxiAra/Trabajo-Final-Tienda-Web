@@ -27,13 +27,15 @@ const Footer = () => {
           {user && (
                 <>
                   <Link to="/">Home</Link>
-                  <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/aboutus">About us</Link>
                 </>
               )}
               {!user && (
                 <>
                   <Link  to="/login">Login</Link>
               <Link to="/register">Registrate</Link>
+              <Link to="/aboutus">About us</Link>
               <Link to="/">Home</Link>
                 </>
               )}
