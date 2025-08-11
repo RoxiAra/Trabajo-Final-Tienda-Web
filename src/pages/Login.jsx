@@ -44,8 +44,8 @@ const Login = () => {
           </section>
           <section className="seccion-usuario-prueba">
             <h2>Usuario de Prueba</h2>
-          <p>Usuario: johnd</p>
-          <p>Contaseña: m38rmF$</p>
+          <p>Usuario: mor_2314</p>
+          <p>Contaseña: 83r5^_</p>
           </section>
           <section className="seccion-formulario">
             <form onSubmit={handleLogin}>

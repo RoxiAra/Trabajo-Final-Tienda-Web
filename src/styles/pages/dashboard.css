@@ -23,7 +23,7 @@
   font-style: italic;
 }
 
-/*-- Variables --*/
+/* Variables */
 :root {
   --tipografia: "Poppins", serif;
   --colorPrincipal: #0A3D62;
@@ -34,8 +34,8 @@
   --tamaño: 250px;
 }
 
-/*-- Registro --*/
-.seccion-register {
+/*-- Administración --*/
+.seccion-dashboard {
   display: flex;
   flex-direction: column; 
   align-items: center;    
@@ -46,15 +46,15 @@
   font-family: var(--tipografia);
 }
 
-.seccion-register h1 {
+.seccion-dashboard h1 {
   color: var(--colorPrincipal);
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-/*-- Formulario --*/
-.form-register {
+/*-- Seccion Cargar Producto --*/
+.seccion-carga {
   background: #fff;
   padding: 25px;
   border-radius: 10px;
@@ -64,32 +64,38 @@
   max-width: 350px;
 }
 
-.form-register div {
+.seccion-carga h2 {
+  color: var(--colorPrincipal);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.form-dashboard div {
   margin-bottom: 15px;
 }
 
-.form-register label {
+.form-dashboard label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
   color: var(--colorPrincipal);
 }
 
-.form-register input {
+.form-dashboard input {
   width: 100%;
   padding: 10px;
   border: 1.5px solid var(--colorContraste);
   border-radius: 6px;
   font-size: 1rem;
-  outline: none;
+  outline: none; 
 }
 
-.form-register input:focus {
+.form-dashboard input:focus {
   border-color: var(--colorDetalles);
 }
 
 /*-- Botón --*/
-.form-register button {
+.form-dashboard button {
   width: 100%;
   padding: 10px;
   background-color: var(--colorDetalles);
@@ -102,19 +108,42 @@
   transition: background 0.3s ease;
 }
 
-.form-register button:hover {
+.form-dashboard button:hover {
   background-color: var(--colorPrincipal);
 }
 
 /* Mensajes */
-.div-error p {
+.error {
   color: rgb(248, 21, 21);
   font-weight: bold;
   text-align: center;
 }
 
-.div-succes p {
-  color: rgb(15, 235, 15);
+/*-- Producto Cargado --*/
+.mostrar-producto {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid var(--colorContraste);
+  box-shadow: 0px 3px 10px rgba( 0,0,0,0.05);
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.mostrar-producto h3 {
+  color: var(--colorPrincipal);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
   font-weight: bold;
-  text-align: center;
+}
+
+.mostrar-producto p{
+  color: var(--colorPrincipal);
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
